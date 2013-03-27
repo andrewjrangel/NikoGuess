@@ -13,6 +13,16 @@
 @end
 
 @implementation MainViewController
+@synthesize buttonOne;
+@synthesize buttonTwo;
+@synthesize buttonThree;
+@synthesize buttonFour;
+@synthesize buttonFive;
+@synthesize buttonSix;
+@synthesize buttonSeven;
+@synthesize buttonEight;
+@synthesize buttonNine;
+NSArray *answers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,34 +45,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+int count = 0;
 
 -(IBAction)buttonOne:(id)sender{
+    count = count +1;
     
+    [buttonOne setHidden:YES];
 }
 -(IBAction)buttonTwo:(id)sender{
+    [buttonTwo setHidden:YES];
     
 }
 
 -(IBAction)buttonThree:(id)sender{
+    [buttonThree setHidden:YES];
     
 }
 -(IBAction)buttonFour:(id)sender{
+    [buttonFour setHidden:YES];
     
 }
 -(IBAction)buttonFive:(id)sender{
+    [buttonFive setHidden:YES];
     
 }
 -(IBAction)buttonSix:(id)sender{
+    [buttonSix setHidden:YES];
     
 }
 -(IBAction)buttonSeven:(id)sender{
+    [buttonSeven setHidden:YES];
     
 }
 -(IBAction)buttonEight:(id)sender{
-    
+    [buttonEight setHidden:YES];
 }
 -(IBAction)buttonNine:(id)sender{
-    
+    [buttonNine setHidden:YES];
 }
 
 

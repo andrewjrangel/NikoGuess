@@ -22,6 +22,11 @@
 @synthesize buttonSeven;
 @synthesize buttonEight;
 @synthesize buttonNine;
+
+@synthesize winOne;
+@synthesize winTwo;
+@synthesize winThree;
+
 NSArray *answers;
 NSString *answer;
 NSString *guess;
@@ -39,6 +44,7 @@ NSString *guess;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setWinsHidden];
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
@@ -46,6 +52,7 @@ NSString *guess;
     if (over) {
         [self setAllHidden];
         [self tooManyGuesses];
+        [self setWinsHidden];
         
     }
     
@@ -73,6 +80,22 @@ NSString *guess;
     [buttonEight setHidden:NO];
     [buttonNine setHidden:NO];
 }
+-(void)setWinsHidden{
+    [winOne setHidden:YES];
+    [winTwo setHidden:YES];
+    [winThree setHidden:YES];
+}
+-(void)winButtonReveal{
+    if (gamesWon == 1){
+        [winOne setHidden:NO];
+    }
+    if (gamesWon == 2){
+        [winTwo setHidden:NO];
+    }
+    if (gamesWon == 3){
+        [winThree setHidden:NO];
+    }
+}
 
 -(void)setKey{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"overage"];
@@ -90,6 +113,8 @@ NSString *guess;
 
 int count = 0;
 int gamesPlayed = 0;
+int gamesWon = 0;
+
 -(void)countTooHigh{
     gamesPlayed = gamesPlayed +1;
     [self tooManyGuesses];
@@ -116,6 +141,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
     } else {
         [buttonOne setHidden:YES];
     }
@@ -131,7 +158,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
-        
+        gamesWon++;
+        [self winButtonReveal];
     } else {
        [buttonTwo setHidden:YES]; 
     }
@@ -147,6 +175,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else {
        [buttonThree setHidden:YES]; 
@@ -162,6 +192,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else {
        [buttonFour setHidden:YES]; 
@@ -177,6 +209,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else {
         [buttonFive setHidden:YES];
@@ -192,6 +226,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else {
        [buttonSix setHidden:YES]; 
@@ -207,6 +243,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else {
         [buttonSeven setHidden:YES];
@@ -221,6 +259,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else{
     [buttonEight setHidden:YES];
@@ -234,6 +274,8 @@ int gamesPlayed = 0;
         [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
+        gamesWon++;
+        [self winButtonReveal];
         
     } else{
         [buttonNine setHidden:YES];

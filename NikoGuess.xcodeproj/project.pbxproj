@@ -40,6 +40,8 @@
 		88FF26F01703B2D200FDB505 /* winning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26DA1703B2D200FDB505 /* winning.jpg */; };
 		88FF26F11703B2D200FDB505 /* source.ai in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26DB1703B2D200FDB505 /* source.ai */; };
 		88FF26F31703B42C00FDB505 /* cat-head-outline-th.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */; };
+		88FF26F51703CC1B00FDB505 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F41703CC1B00FDB505 /* app_icon.png */; };
+		88FF26F71703CC2000FDB505 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F61703CC2000FDB505 /* app_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		88FF26DA1703B2D200FDB505 /* winning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winning.jpg; sourceTree = "<group>"; };
 		88FF26DB1703B2D200FDB505 /* source.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = source.ai; sourceTree = "<group>"; };
 		88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat-head-outline-th.png"; sourceTree = "<group>"; };
+		88FF26F41703CC1B00FDB505 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		88FF26F61703CC2000FDB505 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 		88FF26961703AF6D00FDB505 = {
 			isa = PBXGroup;
 			children = (
+				88FF26F61703CC2000FDB505 /* app_icon@2x.png */,
+				88FF26F41703CC1B00FDB505 /* app_icon.png */,
 				88FF26A81703AF6D00FDB505 /* NikoGuess */,
 				88FF26A11703AF6D00FDB505 /* Frameworks */,
 				88FF26A01703AF6D00FDB505 /* Products */,
@@ -267,6 +273,8 @@
 				88FF26F01703B2D200FDB505 /* winning.jpg in Resources */,
 				88FF26F11703B2D200FDB505 /* source.ai in Resources */,
 				88FF26F31703B42C00FDB505 /* cat-head-outline-th.png in Resources */,
+				88FF26F51703CC1B00FDB505 /* app_icon.png in Resources */,
+				88FF26F71703CC2000FDB505 /* app_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

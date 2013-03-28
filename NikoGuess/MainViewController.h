@@ -29,7 +29,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonEight;
 @property (strong, nonatomic) IBOutlet UIButton *buttonNine;
 
-
+@property (strong, nonatomic) IBOutlet UIImageView *winOne;
+@property (strong, nonatomic) IBOutlet UIImageView *winTwo;
+@property (strong, nonatomic) IBOutlet UIImageView *winThree;
 
 
 @end

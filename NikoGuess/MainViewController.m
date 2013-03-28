@@ -42,9 +42,6 @@ NSString *guess;
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
-    if (gamesPlayed  == 4){
-        [self setKey];
-    }
     BOOL over = [[NSUserDefaults standardUserDefaults] boolForKey:@"overage"];
     if (over) {
         [self setAllHidden];
@@ -83,6 +80,8 @@ NSString *guess;
 }
 
 
+    
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -91,6 +90,12 @@ NSString *guess;
 
 int count = 0;
 int gamesPlayed = 0;
+-(void)countTooHigh{
+    gamesPlayed = gamesPlayed +1;
+    [self tooManyGuesses];
+    [self showAll];
+    count = 0;
+}
 
 -(void)tooManyGuesses{
     UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
@@ -108,9 +113,7 @@ int gamesPlayed = 0;
     guess = @"1";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
     } else {
@@ -125,10 +128,7 @@ int gamesPlayed = 0;
     guess = @"2";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
-        
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -144,9 +144,7 @@ int gamesPlayed = 0;
     guess = @"3";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -161,9 +159,7 @@ int gamesPlayed = 0;
     guess = @"4";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -178,9 +174,7 @@ int gamesPlayed = 0;
     guess = @"5";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -195,9 +189,7 @@ int gamesPlayed = 0;
     guess = @"6";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -212,9 +204,7 @@ int gamesPlayed = 0;
     guess = @"7";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -228,9 +218,7 @@ int gamesPlayed = 0;
     guess = @"8";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         
@@ -243,9 +231,7 @@ int gamesPlayed = 0;
     guess = @"9";
     
     if(count >=4){
-        gamesPlayed = gamesPlayed +1;
-        [self tooManyGuesses];
-        [self showAll];
+        [self countTooHigh];
     } else if(guess == answer){
         [self correctAnswer];
         

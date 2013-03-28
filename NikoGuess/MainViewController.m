@@ -30,7 +30,9 @@
 NSArray *answers;
 NSString *answer;
 NSString *guess;
-
+int count = 0;
+int gamesPlayed = 0;
+int gamesWon = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,7 +46,9 @@ NSString *guess;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setWinsHidden];
+    if(gamesWon == 0){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hide"];
+    }
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
@@ -52,11 +56,15 @@ NSString *guess;
     if (over) {
         [self setAllHidden];
         [self tooManyGuesses];
-        [self setWinsHidden];
-        
     }
-    
+    BOOL hide = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide"];
+    if (hide) {
+        [self setWinsHidden];
+    }
 }
+
+
+
 
 -(void)setAllHidden{
     [buttonOne setHidden:YES];
@@ -86,6 +94,7 @@ NSString *guess;
     [winThree setHidden:YES];
 }
 -(void)winButtonReveal{
+    
     if (gamesWon == 1){
         [winOne setHidden:NO];
     }
@@ -111,9 +120,6 @@ NSString *guess;
     // Dispose of any resources that can be recreated.
 }
 
-int count = 0;
-int gamesPlayed = 0;
-int gamesWon = 0;
 
 -(void)countTooHigh{
     gamesPlayed = gamesPlayed +1;

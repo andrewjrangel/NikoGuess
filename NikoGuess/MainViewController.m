@@ -103,6 +103,7 @@ int gamesWon = 0;
     }
     if (gamesWon == 3){
         [winThree setHidden:NO];
+    
     }
 }
 

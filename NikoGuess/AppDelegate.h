@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "WinViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

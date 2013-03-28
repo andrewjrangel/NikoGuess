@@ -33,5 +33,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *winTwo;
 @property (strong, nonatomic) IBOutlet UIImageView *winThree;
 
+-(void)dismissWinningView;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "WinViewController.h"
 
 @interface MainViewController ()
 
@@ -52,15 +53,16 @@ int gamesWon = 0;
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
-    BOOL over = [[NSUserDefaults standardUserDefaults] boolForKey:@"overage"];
-    if (over) {
-        [self setAllHidden];
-        [self tooManyGuesses];
-    }
+    
+    
+    
+    
+    
     BOOL hide = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide"];
     if (hide) {
         [self setWinsHidden];
     }
+    
 }
 
 
@@ -76,6 +78,7 @@ int gamesWon = 0;
     [buttonSeven setHidden:YES];
     [buttonEight setHidden:YES];
     [buttonNine setHidden:YES];
+    [self setWinsHidden];
 }
 -(void)showAll{
     [buttonOne setHidden:NO];
@@ -112,8 +115,17 @@ int gamesWon = 0;
 
 }
 
+-(void)gameWin{
+    if (gamesWon == 3){
+        WinViewController *winView = [[WinViewController alloc] init];
+        winView.myParent = self;
+        [self presentViewController:winView animated:YES completion:nil];
+    }
+}
 
-    
+-(void)dismissWinningView{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -124,9 +136,18 @@ int gamesWon = 0;
 
 -(void)countTooHigh{
     gamesPlayed = gamesPlayed +1;
-    [self tooManyGuesses];
+    
     [self showAll];
     count = 0;
+    if(gamesPlayed>= 4){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"overage"];
+    BOOL over = [[NSUserDefaults standardUserDefaults] boolForKey:@"overage"];
+        if (over) {
+            [self setAllHidden];
+        }
+    }
+    [self tooManyGuesses];
+
 }
 
 -(void)tooManyGuesses{
@@ -149,7 +170,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
+        [buttonOne setHidden:NO];
     } else {
         [buttonOne setHidden:YES];
     }
@@ -166,7 +189,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
+        [buttonTwo setHidden:NO];
     } else {
        [buttonTwo setHidden:YES]; 
     }
@@ -183,8 +208,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonThree setHidden:NO];
     } else {
        [buttonThree setHidden:YES]; 
     }
@@ -200,8 +226,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonFour setHidden:NO];
     } else {
        [buttonFour setHidden:YES]; 
     }
@@ -217,8 +244,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonFive setHidden:NO];
     } else {
         [buttonFive setHidden:YES];
     }
@@ -234,8 +262,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonSix setHidden:NO];
     } else {
        [buttonSix setHidden:YES]; 
     }
@@ -251,8 +280,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonSeven setHidden:NO];
     } else {
         [buttonSeven setHidden:YES];
     }
@@ -267,8 +297,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonEight setHidden:NO];
     } else{
     [buttonEight setHidden:YES];
     }
@@ -282,8 +313,9 @@ int gamesWon = 0;
     } else if(guess == answer){
         [self correctAnswer];
         gamesWon++;
+        [self gameWin];
         [self winButtonReveal];
-        
+        [buttonNine setHidden:NO];
     } else{
         [buttonNine setHidden:YES];
     }

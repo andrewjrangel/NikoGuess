@@ -28,6 +28,8 @@
 @synthesize winTwo;
 @synthesize winThree;
 
+@synthesize resetGame;
+
 NSArray *answers;
 NSString *answer;
 NSString *guess;
@@ -44,18 +46,31 @@ int gamesWon = 0;
     return self;
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(resetGame == TRUE){
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"overage"];
+        NSLog(@"game reset complete");
+        count = 0;
+        gamesPlayed = 0;
+        gamesWon = 0;
+        resetGame = FALSE;
+        
+    }   
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     if(gamesWon == 0){
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hide"];
     }
-    answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
-    int myIndex = arc4random_uniform(answers.count);
-    answer = [answers objectAtIndex:myIndex];
     
     
-    
+     
+
     
     
     BOOL hide = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide"];
@@ -65,7 +80,10 @@ int gamesWon = 0;
     
 }
 
+-(void)getAnswerArray{
+    answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
 
+}
 
 
 -(void)setAllHidden{
@@ -161,7 +179,14 @@ int gamesWon = 0;
 }
 
 
+-(void)everyButtonPress{
+    [self getAnswerArray];
+    int myIndex = arc4random_uniform(answers.count);
+    answer = [answers objectAtIndex:myIndex];
+}
+
 -(IBAction)buttonOne:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"1";
     
@@ -181,6 +206,7 @@ int gamesWon = 0;
 
 
 -(IBAction)buttonTwo:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"2";
     
@@ -200,6 +226,7 @@ int gamesWon = 0;
 }
 
 -(IBAction)buttonThree:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"3";
     
@@ -218,6 +245,7 @@ int gamesWon = 0;
     
 }
 -(IBAction)buttonFour:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"4";
     
@@ -236,6 +264,7 @@ int gamesWon = 0;
     
 }
 -(IBAction)buttonFive:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"5";
     
@@ -254,6 +283,7 @@ int gamesWon = 0;
     
 }
 -(IBAction)buttonSix:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"6";
     
@@ -272,6 +302,7 @@ int gamesWon = 0;
     
 }
 -(IBAction)buttonSeven:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"7";
     
@@ -289,6 +320,7 @@ int gamesWon = 0;
     
 }
 -(IBAction)buttonEight:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"8";
     
@@ -305,6 +337,7 @@ int gamesWon = 0;
     }
 }
 -(IBAction)buttonNine:(id)sender{
+    [self everyButtonPress];
     count = count +1;
     guess = @"9";
     

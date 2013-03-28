@@ -33,6 +33,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *winTwo;
 @property (strong, nonatomic) IBOutlet UIImageView *winThree;
 
+@property BOOL resetGame;
+
+
 -(void)dismissWinningView;
 
 @end

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 
-@interface WinViewController : UIViewController
+@interface WinViewController : UIViewController{
+    MainViewController *mainViewController;
+}
 @property (strong, nonatomic) MainViewController *myParent;
 
 - (IBAction)backButton:(id)sender;

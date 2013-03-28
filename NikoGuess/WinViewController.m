@@ -7,12 +7,14 @@
 //
 
 #import "WinViewController.h"
+#import "MainViewController.h"
 
 @interface WinViewController ()
 
 @end
 
 @implementation WinViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    mainViewController = [[MainViewController alloc] init];
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,6 +41,8 @@
 }
 
 - (IBAction)backButton:(id)sender {
+    mainViewController.resetGame = TRUE;
     [self.myParent dismissWinningView];
+    
 }
 @end

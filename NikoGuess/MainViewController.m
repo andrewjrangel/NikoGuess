@@ -196,12 +196,14 @@ int gamesWon = 0;
     gamesWon++;
     [self gameWin];
     [self winButtonReveal];
+    [self showAll];
    
 }
 
 -(void)answerIncorrect{
     [self resetAnswer];
     NSLog(@"%@", answer);
+    
 
 }
 
@@ -219,7 +221,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonOne setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonOne setHidden:YES];
@@ -235,7 +236,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonTwo setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonTwo setHidden:YES];
@@ -252,10 +252,9 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonThree setHidden:NO];
     } else {
         [self answerIncorrect];
-        [buttonThree setHidden:YES];
+       [buttonThree setHidden:YES];
     }
     
     
@@ -268,10 +267,9 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonFour setHidden:NO];
     } else {
         [self answerIncorrect];
-        [buttonFour setHidden:YES];
+       [buttonFour setHidden:YES];
     }
     
     
@@ -284,7 +282,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonFive setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonFive setHidden:YES];
@@ -300,7 +297,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonSix setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonSix setHidden:YES];
@@ -316,7 +312,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonSeven setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonSeven setHidden:YES];
@@ -331,7 +326,6 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonEight setHidden:NO];
     } else {
         [self answerIncorrect];
         [buttonEight setHidden:YES];
@@ -345,10 +339,9 @@ int gamesWon = 0;
         [self countGreaterThanFour];
     } else if(guess == answer){
         [self answerCorrect];
-        [buttonNine setHidden:NO];
     } else {
         [self answerIncorrect];
-        [buttonNine setHidden:YES];
+       [buttonNine setHidden:YES];
     }
 }
 

@@ -44,6 +44,7 @@
 		88FF2703170412FB00FDB505 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF2701170412FB00FDB505 /* Default@2x.png */; };
 		88FF27071704135600FDB505 /* WinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FF27051704135500FDB505 /* WinViewController.m */; };
 		88FF27081704135600FDB505 /* WinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FF27061704135500FDB505 /* WinViewController.xib */; };
+		88FF270A17062EFD00FDB505 /* r04.ai_shop_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		88FF27041704135400FDB505 /* WinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinViewController.h; sourceTree = "<group>"; };
 		88FF27051704135500FDB505 /* WinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinViewController.m; sourceTree = "<group>"; };
 		88FF27061704135500FDB505 /* WinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinViewController.xib; sourceTree = "<group>"; };
+		88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = r04.ai_shop_preview.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		88FF26C41703B19A00FDB505 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */,
 				88FF26F61703CC2000FDB505 /* app_icon@2x.png */,
 				88FF26F41703CC1B00FDB505 /* app_icon.png */,
 				88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */,
@@ -284,6 +287,7 @@
 				88FF2702170412FB00FDB505 /* Default.png in Resources */,
 				88FF2703170412FB00FDB505 /* Default@2x.png in Resources */,
 				88FF27081704135600FDB505 /* WinViewController.xib in Resources */,
+				88FF270A17062EFD00FDB505 /* r04.ai_shop_preview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

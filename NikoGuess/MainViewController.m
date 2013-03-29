@@ -65,15 +65,12 @@ int gamesWon = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(gamesWon == 0){
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hide"];
-    }
+    [self setWinsHidden];
+    gamesWon = [[NSUserDefaults standardUserDefaults] integerForKey:@"gamesWon"];
+    NSLog(@"gamesWon = %d", gamesWon);
+    [self winButtonReveal];
     
     
-    BOOL hide = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide"];
-    if (hide) {
-        [self setWinsHidden];
-    }
     
 }
 
@@ -112,9 +109,10 @@ int gamesWon = 0;
     [winThree setHidden:YES];
 }
 -(void)winButtonReveal{
-    
+    NSLog(@"games log in reveal = %d", gamesWon);
     if (gamesWon == 1){
         [winOne setHidden:NO];
+        NSLog(@"winOne is %@", winOne);
     }
     if (gamesWon == 2){
         [winTwo setHidden:NO];
@@ -131,6 +129,8 @@ int gamesWon = 0;
 }
 
 -(void)gameWin{
+    gamesWon++;
+    [[NSUserDefaults standardUserDefaults] setInteger:gamesWon forKey:@"gamesWon"];
     if (gamesWon == 3){
         WinViewController *winView = [[WinViewController alloc] init];
         winView.myParent = self;
@@ -193,7 +193,6 @@ int gamesWon = 0;
     [self resetAnswer];
     NSLog(@"%@", answer);
     [self correctAnswer];
-    gamesWon++;
     [self gameWin];
     [self winButtonReveal];
     [self showAll];

@@ -29,7 +29,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    mainViewController = [[MainViewController alloc] init];
 }
 
 
@@ -41,8 +40,8 @@
 }
 
 - (IBAction)backButton:(id)sender {
-    mainViewController.resetGame = TRUE;
-    [self.myParent dismissWinningView];
+        self.myParent.resetGame = YES;
+        [self.myParent dismissWinningView];
     
 }
 @end

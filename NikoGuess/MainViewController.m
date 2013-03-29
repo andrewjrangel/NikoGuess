@@ -55,6 +55,7 @@ int gamesWon = 0;
         count = 0;
         gamesPlayed = 0;
         gamesWon = 0;
+        [self setWinsHidden];
         resetGame = FALSE;
         
     }   
@@ -67,10 +68,6 @@ int gamesWon = 0;
     if(gamesWon == 0){
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hide"];
     }
-    
-    
-     
-
     
     
     BOOL hide = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide"];
@@ -179,177 +176,178 @@ int gamesWon = 0;
 }
 
 
--(void)everyButtonPress{
+-(void)resetAnswer{
     [self getAnswerArray];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
 }
 
--(IBAction)buttonOne:(id)sender{
-    [self everyButtonPress];
+-(void)countGreaterThanFour{
+    [self countTooHigh];
+    [self resetAnswer];
+    NSLog(@"%@", answer);
+
+}
+
+-(void)answerCorrect{
+    [self resetAnswer];
+    NSLog(@"%@", answer);
+    [self correctAnswer];
+    gamesWon++;
+    [self gameWin];
+    [self winButtonReveal];
+   
+}
+
+-(void)answerIncorrect{
+    [self resetAnswer];
+    NSLog(@"%@", answer);
+
+}
+
+-(void)everybuttonPress{
     count = count +1;
+}
+
+
+
+-(IBAction)buttonOne:(id)sender{
+    [self everybuttonPress];
     guess = @"1";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonOne setHidden:NO];
     } else {
+        [self answerIncorrect];
         [buttonOne setHidden:YES];
     }
     
 }
 
-
 -(IBAction)buttonTwo:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"2";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonTwo setHidden:NO];
     } else {
-       [buttonTwo setHidden:YES]; 
+        [self answerIncorrect];
+        [buttonTwo setHidden:YES];
     }
     
     
 }
 
 -(IBAction)buttonThree:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"3";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonThree setHidden:NO];
     } else {
-       [buttonThree setHidden:YES]; 
+        [self answerIncorrect];
+        [buttonThree setHidden:YES];
     }
     
     
 }
 -(IBAction)buttonFour:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"4";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonFour setHidden:NO];
     } else {
-       [buttonFour setHidden:YES]; 
+        [self answerIncorrect];
+        [buttonFour setHidden:YES];
     }
     
     
 }
 -(IBAction)buttonFive:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"5";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonFive setHidden:NO];
     } else {
+        [self answerIncorrect];
         [buttonFive setHidden:YES];
     }
     
     
 }
 -(IBAction)buttonSix:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"6";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonSix setHidden:NO];
     } else {
-       [buttonSix setHidden:YES]; 
+        [self answerIncorrect];
+        [buttonSix setHidden:YES];
     }
     
     
 }
 -(IBAction)buttonSeven:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"7";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonSeven setHidden:NO];
     } else {
+        [self answerIncorrect];
         [buttonSeven setHidden:YES];
     }
     
 }
 -(IBAction)buttonEight:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"8";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonEight setHidden:NO];
-    } else{
-    [buttonEight setHidden:YES];
+    } else {
+        [self answerIncorrect];
+        [buttonEight setHidden:YES];
     }
 }
 -(IBAction)buttonNine:(id)sender{
-    [self everyButtonPress];
-    count = count +1;
+    [self everybuttonPress];
     guess = @"9";
     
     if(count >=4){
-        [self countTooHigh];
+        [self countGreaterThanFour];
     } else if(guess == answer){
-        [self correctAnswer];
-        gamesWon++;
-        [self gameWin];
-        [self winButtonReveal];
+        [self answerCorrect];
         [buttonNine setHidden:NO];
-    } else{
+    } else {
+        [self answerIncorrect];
         [buttonNine setHidden:YES];
     }
 }

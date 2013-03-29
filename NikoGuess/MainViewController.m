@@ -115,9 +115,12 @@ int gamesWon = 0;
         NSLog(@"winOne is %@", winOne);
     }
     if (gamesWon == 2){
+        [winOne setHidden:NO];
         [winTwo setHidden:NO];
     }
     if (gamesWon == 3){
+        [winOne setHidden:NO];
+        [winTwo setHidden:NO];
         [winThree setHidden:NO];
     
     }

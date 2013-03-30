@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881CAD5E17069C490092CDD5 /* nekobean_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD5B17069C490092CDD5 /* nekobean_smile.png */; };
+		881CAD5F17069C490092CDD5 /* NikoGuess.tif in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD5C17069C490092CDD5 /* NikoGuess.tif */; };
+		881CAD6017069C490092CDD5 /* NikoGuess1.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD5D17069C490092CDD5 /* NikoGuess1.png */; };
+		881CAD621706A6090092CDD5 /* NikoGuess.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD611706A6090092CDD5 /* NikoGuess.png */; };
 		88FF26A31703AF6D00FDB505 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A21703AF6D00FDB505 /* UIKit.framework */; };
 		88FF26A51703AF6D00FDB505 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A41703AF6D00FDB505 /* Foundation.framework */; };
 		88FF26A71703AF6D00FDB505 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A61703AF6D00FDB505 /* CoreGraphics.framework */; };
@@ -48,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		881CAD5B17069C490092CDD5 /* nekobean_smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nekobean_smile.png; sourceTree = "<group>"; };
+		881CAD5C17069C490092CDD5 /* NikoGuess.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = NikoGuess.tif; sourceTree = "<group>"; };
+		881CAD5D17069C490092CDD5 /* NikoGuess1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NikoGuess1.png; sourceTree = "<group>"; };
+		881CAD611706A6090092CDD5 /* NikoGuess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NikoGuess.png; sourceTree = "<group>"; };
 		88FF269F1703AF6D00FDB505 /* NikoGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FF26A21703AF6D00FDB505 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88FF26A41703AF6D00FDB505 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +178,10 @@
 		88FF26C41703B19A00FDB505 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				881CAD611706A6090092CDD5 /* NikoGuess.png */,
+				881CAD5B17069C490092CDD5 /* nekobean_smile.png */,
+				881CAD5C17069C490092CDD5 /* NikoGuess.tif */,
+				881CAD5D17069C490092CDD5 /* NikoGuess1.png */,
 				88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */,
 				88FF26F61703CC2000FDB505 /* app_icon@2x.png */,
 				88FF26F41703CC1B00FDB505 /* app_icon.png */,
@@ -288,6 +300,10 @@
 				88FF2703170412FB00FDB505 /* Default@2x.png in Resources */,
 				88FF27081704135600FDB505 /* WinViewController.xib in Resources */,
 				88FF270A17062EFD00FDB505 /* r04.ai_shop_preview.png in Resources */,
+				881CAD5E17069C490092CDD5 /* nekobean_smile.png in Resources */,
+				881CAD5F17069C490092CDD5 /* NikoGuess.tif in Resources */,
+				881CAD6017069C490092CDD5 /* NikoGuess1.png in Resources */,
+				881CAD621706A6090092CDD5 /* NikoGuess.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

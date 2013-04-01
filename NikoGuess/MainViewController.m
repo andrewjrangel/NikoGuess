@@ -76,8 +76,9 @@ int gamesWon = 0;
 
 -(void)getAnswerArray{
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
-
 }
+
+
 
 
 -(void)setAllHidden{
@@ -195,16 +196,17 @@ int gamesWon = 0;
 -(void)answerCorrect{
     [self resetAnswer];
     NSLog(@"%@", answer);
-    [self correctAnswer];
+    //[self correctAnswer];
     [self gameWin];
     [self winButtonReveal];
     [self showAll];
+    count = 0;
    
 }
 
 -(void)answerIncorrect{
-    [self resetAnswer];
-    NSLog(@"%@", answer);
+    //[self resetAnswer];
+    //NSLog(@"%@", answer);
     
 
 }

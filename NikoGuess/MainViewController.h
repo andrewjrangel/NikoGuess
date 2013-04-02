@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface MainViewController : UIViewController
 -(IBAction)buttonOne:(id)sender;

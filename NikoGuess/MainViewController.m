@@ -79,8 +79,6 @@ int gamesWon = 0;
 }
 
 
-
-
 -(void)setAllHidden{
     [buttonOne setHidden:YES];
     [buttonTwo setHidden:YES];
@@ -213,6 +211,7 @@ int gamesWon = 0;
 
 -(void)everybuttonPress{
     count = count +1;
+
 }
 
 

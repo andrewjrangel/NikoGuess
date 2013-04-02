@@ -18,6 +18,8 @@
 		881CAD731707566F0092CDD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD711707566F0092CDD5 /* Default.png */; };
 		881CAD741707566F0092CDD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD721707566F0092CDD5 /* Default@2x.png */; };
 		881CAD76170953820092CDD5 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD75170953820092CDD5 /* success.png */; };
+		881CAD78170969AF0092CDD5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881CAD77170969AF0092CDD5 /* AVFoundation.framework */; };
+		881CAD7A17096B240092CDD5 /* Cat02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD7917096B240092CDD5 /* Cat02.mp3 */; };
 		88FF26A31703AF6D00FDB505 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A21703AF6D00FDB505 /* UIKit.framework */; };
 		88FF26A51703AF6D00FDB505 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A41703AF6D00FDB505 /* Foundation.framework */; };
 		88FF26A71703AF6D00FDB505 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A61703AF6D00FDB505 /* CoreGraphics.framework */; };
@@ -46,6 +48,8 @@
 		881CAD711707566F0092CDD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		881CAD721707566F0092CDD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		881CAD75170953820092CDD5 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
+		881CAD77170969AF0092CDD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		881CAD7917096B240092CDD5 /* Cat02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cat02.mp3; sourceTree = "<group>"; };
 		88FF269F1703AF6D00FDB505 /* NikoGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FF26A21703AF6D00FDB505 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88FF26A41703AF6D00FDB505 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881CAD78170969AF0092CDD5 /* AVFoundation.framework in Frameworks */,
 				88FF26A31703AF6D00FDB505 /* UIKit.framework in Frameworks */,
 				88FF26A51703AF6D00FDB505 /* Foundation.framework in Frameworks */,
 				88FF26A71703AF6D00FDB505 /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +90,7 @@
 		88FF26961703AF6D00FDB505 = {
 			isa = PBXGroup;
 			children = (
+				881CAD77170969AF0092CDD5 /* AVFoundation.framework */,
 				881CAD6F170747790092CDD5 /* NGicon@2x.png */,
 				881CAD6D170747750092CDD5 /* NGicon.png */,
 				881CAD651706ABE80092CDD5 /* Default.png */,
@@ -115,6 +121,7 @@
 		88FF26A81703AF6D00FDB505 /* NikoGuess */ = {
 			isa = PBXGroup;
 			children = (
+				881CAD7917096B240092CDD5 /* Cat02.mp3 */,
 				88FF26C41703B19A00FDB505 /* Images */,
 				88FF26B11703AF6D00FDB505 /* AppDelegate.h */,
 				88FF26B21703AF6D00FDB505 /* AppDelegate.m */,
@@ -228,6 +235,7 @@
 				881CAD731707566F0092CDD5 /* Default.png in Resources */,
 				881CAD741707566F0092CDD5 /* Default@2x.png in Resources */,
 				881CAD76170953820092CDD5 /* success.png in Resources */,
+				881CAD7A17096B240092CDD5 /* Cat02.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

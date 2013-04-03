@@ -20,6 +20,8 @@
 		881CAD76170953820092CDD5 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD75170953820092CDD5 /* success.png */; };
 		881CAD78170969AF0092CDD5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881CAD77170969AF0092CDD5 /* AVFoundation.framework */; };
 		881CAD7A17096B240092CDD5 /* Cat02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD7917096B240092CDD5 /* Cat02.mp3 */; };
+		881CADB1170B9FAC0092CDD5 /* GuessingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 881CADB0170B9FAC0092CDD5 /* GuessingGame.m */; };
+		881CADB4170B9FC00092CDD5 /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = 881CADB3170B9FC00092CDD5 /* Choice.m */; };
 		88FF26A31703AF6D00FDB505 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A21703AF6D00FDB505 /* UIKit.framework */; };
 		88FF26A51703AF6D00FDB505 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A41703AF6D00FDB505 /* Foundation.framework */; };
 		88FF26A71703AF6D00FDB505 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A61703AF6D00FDB505 /* CoreGraphics.framework */; };
@@ -50,6 +52,10 @@
 		881CAD75170953820092CDD5 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
 		881CAD77170969AF0092CDD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		881CAD7917096B240092CDD5 /* Cat02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cat02.mp3; sourceTree = "<group>"; };
+		881CADAF170B9FAC0092CDD5 /* GuessingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuessingGame.h; sourceTree = "<group>"; };
+		881CADB0170B9FAC0092CDD5 /* GuessingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuessingGame.m; sourceTree = "<group>"; };
+		881CADB2170B9FC00092CDD5 /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
+		881CADB3170B9FC00092CDD5 /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
 		88FF269F1703AF6D00FDB505 /* NikoGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FF26A21703AF6D00FDB505 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88FF26A41703AF6D00FDB505 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881CADAE170B9F520092CDD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				881CADAF170B9FAC0092CDD5 /* GuessingGame.h */,
+				881CADB0170B9FAC0092CDD5 /* GuessingGame.m */,
+				881CADB2170B9FC00092CDD5 /* Choice.h */,
+				881CADB3170B9FC00092CDD5 /* Choice.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		88FF26961703AF6D00FDB505 = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +138,8 @@
 		88FF26A81703AF6D00FDB505 /* NikoGuess */ = {
 			isa = PBXGroup;
 			children = (
-				881CAD7917096B240092CDD5 /* Cat02.mp3 */,
-				88FF26C41703B19A00FDB505 /* Images */,
+				881CADAE170B9F520092CDD5 /* Model */,
+				88FF26C41703B19A00FDB505 /* Media */,
 				88FF26B11703AF6D00FDB505 /* AppDelegate.h */,
 				88FF26B21703AF6D00FDB505 /* AppDelegate.m */,
 				88FF26A91703AF6D00FDB505 /* Supporting Files */,
@@ -151,9 +168,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		88FF26C41703B19A00FDB505 /* Images */ = {
+		88FF26C41703B19A00FDB505 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				881CAD7917096B240092CDD5 /* Cat02.mp3 */,
 				881CAD75170953820092CDD5 /* success.png */,
 				881CAD69170747620092CDD5 /* NGicon.png */,
 				881CAD6A170747630092CDD5 /* NGicon@2x.png */,
@@ -163,7 +181,7 @@
 				88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */,
 				88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */,
 			);
-			name = Images;
+			name = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +268,8 @@
 				88FF26B31703AF6D00FDB505 /* AppDelegate.m in Sources */,
 				88FF26C21703AF8B00FDB505 /* MainViewController.m in Sources */,
 				88FF27071704135600FDB505 /* WinViewController.m in Sources */,
+				881CADB1170B9FAC0092CDD5 /* GuessingGame.m in Sources */,
+				881CADB4170B9FC00092CDD5 /* Choice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

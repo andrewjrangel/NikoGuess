@@ -64,14 +64,24 @@ int gamesWon = 0;
 
 - (void)viewDidLoad
 {
+    [self setAllHidden];
     [super viewDidLoad];
     [self setWinsHidden];
     gamesWon = [[NSUserDefaults standardUserDefaults] integerForKey:@"gamesWon"];
     NSLog(@"gamesWon = %d", gamesWon);
     [self winButtonReveal];
     
-    
-    
+    for (int y = 0; y<3; y++) {
+        for (int x = 0; x<3; x++) {
+            UIButton *button = [[UIButton alloc]init];
+            button.frame = CGRectMake(x*100+15, y*80+150, 75, 64);
+            [button setBackgroundImage:[UIImage imageNamed:@"cat-head-outline-th"] forState:UIControlStateNormal];
+            [self.view addSubview:button];
+            [button addTarget:self action:@selector(handleButton:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+
+   
 }
 
 -(void)getAnswerArray{

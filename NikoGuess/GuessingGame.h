@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface GuessingGame : NSObject
+@property BOOL isWinner;
+-(void)runGame;
+-(void)checkAnswer: NSString;
 
 
 @end

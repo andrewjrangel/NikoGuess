@@ -9,9 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @interface GuessingGame : NSObject
+
 @property BOOL isWinner;
+@property (nonatomic) NSInteger gameGuess;
+@property (nonatomic) NSInteger maxGuess;
+@property (nonatomic) NSInteger gameWin;
+@property (nonatomic) NSInteger maxWin;
+@property (strong, nonatomic) NSArray *answers;
+@property (strong, nonatomic) NSString *answer;
+
+
+-(void)checkAnswer: (NSString *) selectionButton;
+-(void)buttonPress: (BOOL) isWinner;
 -(void)runGame;
--(void)checkAnswer: NSString;
-
-
+-(void)tooManyGuesses;
+-(void)winGame;
+-(void)keepTrying;
 @end

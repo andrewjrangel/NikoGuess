@@ -11,7 +11,7 @@
 #import "GuessingGame.h"
 
 @interface MainViewController ()
-@property (strong, nonatomic) NSString *selectionNumber;
+@property (nonatomic, strong) GuessingGame *game;
 @end
 
 @implementation MainViewController
@@ -23,23 +23,25 @@ NSArray *answers;
 NSString *answer;
 NSString *guess;
 NSString *winButtonHide;
+NSString *selectionButton;
+
 int count = 0;
 int gamesPlayed = 0;
-int gamesWon = 0;
 
 
 
 - (void)viewDidLoad
 {
     GuessingGame *game = [[GuessingGame alloc]init];
-    if(game.isWinner == TRUE){
-        
-    }
+    [game runGame];
+
+    
+  
     
     [super viewDidLoad];
     
-    gamesWon = [[NSUserDefaults standardUserDefaults] integerForKey:@"gamesWon"];
-    NSLog(@"gamesWon = %d", gamesWon);
+   // gamesWon = [[NSUserDefaults standardUserDefaults] integerForKey:@"gamesWon"];
+    //NSLog(@"gamesWon = %d", gamesWon);
     
     for (int y = 0; y<3; y++) {
         for (int x = 0; x<3; x++) {
@@ -93,13 +95,23 @@ int gamesWon = 0;
 
 
 -(void)handleButton:(UIButton *)button{
-   // NSLog(@"%@", [[button.subviews lastObject] text]);
     NSString *selectionNumber = [[button.subviews lastObject] text];
+    [self.game checkAnswer:selectionButton];
+    [self.game buttonPress:[self.game isWinner]];
+    [self.game winGame];
+    
     NSLog(@"in the button %@",selectionNumber);
-    NSLog(@"Win number %@", winButtonHide);
-
+    [button setHidden:YES];
+    
+    if ([self.game isWinner] == TRUE) {
+        [self resetButton];
+    }
+    
 }
 
+-(void)resetButton{
+    [self.button setHidden:NO];
+}
 
 
 -(void)dismissWinningView{

@@ -13,8 +13,10 @@
 
 
 @property BOOL resetGame;
+@property (strong, nonatomic) UILabel *button;
+@property (strong, nonatomic) NSString *selectionNumber;
 
-
+-(void)resetButton;
 -(void)dismissWinningView;
 
 @end

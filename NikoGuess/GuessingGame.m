@@ -9,15 +9,17 @@
 #import "GuessingGame.h"
 #import "MainViewController.h"
 
+
+
 @implementation GuessingGame
 
-NSArray *answers;
-NSString *answer;
+@synthesize answer;
+@synthesize answers;
+NSInteger gameGuess = 0;
 
-int gameGuess = 0;
-int maxGuess = 4;
-int gameWin = 0;
-int maxWin = 3;
+
+
+
 
 -(void)getAnswerArray{
     answers = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"6", @"7", @"8", @"9", nil];
@@ -27,39 +29,64 @@ int maxWin = 3;
     [self getAnswerArray];
     int myIndex = arc4random_uniform(answers.count);
     answer = [answers objectAtIndex:myIndex];
+    NSLog(@"The right answer is %@", self.answer);
 }
 
--(void)checkAnswer{
-    
-}
-
-
--(void)runGame: selectionNumber{
+-(void)runGame{
     gameGuess ++;
     [self resetAnswer];
-    if(selectionNumber == answer){
-        self.isWinner = TRUE;
-    } else {
-        self.isWinner = FALSE;
-    }
     
-}
-
-
--(void)tooManyGuesses{
-    UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
-    [overageAlert show];
-}
-
--(void)correctAnswer{
-    UIAlertView *guessCorrect = [[UIAlertView alloc] initWithTitle:@"Correct" message:@"You are correct!" delegate:nil cancelButtonTitle:@"Meow Meow!" otherButtonTitles:nil, nil];
-    [guessCorrect show];
 }
 
 -(void)setKey{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"overage"];
     
 }
+
+-(void)tooManyGuesses{
+    UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
+    [overageAlert show];
+}
+
+-(void)winGame{
+    NSLog(@"winGame");
+}
+
+-(void)keepTrying{
+    NSLog(@"Keep Trying");
+}
+
+
+
+
+-(void)checkAnswer: (NSString *) selectionButton{
+    if (selectionButton == answer) {
+        NSLog(@"you win!");
+        self.isWinner = TRUE;
+    } else {
+        NSLog(@"you lose!");
+        
+    }
+}
+
+-(void)buttonPress:(BOOL)isWinner{
+    gameGuess++;
+    
+    if (gameGuess >=4) {
+        NSLog(@"too many guesses");
+    } else if (self.isWinner == TRUE){
+        [self winGame];
+        NSLog(@"you win!");
+    } else {
+        NSLog(@"you lost");
+    }
+    
+}
+
+
+
+
+
 
 //if(resetGame == TRUE){
 //    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
@@ -73,19 +100,6 @@ int maxWin = 3;
 //    
 //}
 
-
-//-(IBAction)buttonOne:(id)sender{
-//    [self everybuttonPress];
-//    guess = @"1";
-//    
-//    if(count >=4){
-//        [self countGreaterThanFour];
-//    } else if(guess == answer){
-//        [self answerCorrect];
-//    } else {
-//        [self answerIncorrect];
-//        [buttonOne setHidden:YES];
-//    }
 
 
 //-(void)gameWin{

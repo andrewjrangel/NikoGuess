@@ -19,29 +19,22 @@
 @synthesize resetGame;
 
 
-NSArray *answers;
-NSString *answer;
-NSString *guess;
-NSString *winButtonHide;
-NSString *selectionButton;
+NSString *selectionNumber;
 
-int count = 0;
-int gamesPlayed = 0;
+
+
 
 
 
 - (void)viewDidLoad
 {
-    GuessingGame *game = [[GuessingGame alloc]init];
-    [game runGame];
+    self.game = [[GuessingGame alloc]init];
+    [self.game runGame];
 
     
   
     
     [super viewDidLoad];
-    
-   // gamesWon = [[NSUserDefaults standardUserDefaults] integerForKey:@"gamesWon"];
-    //NSLog(@"gamesWon = %d", gamesWon);
     
     for (int y = 0; y<3; y++) {
         for (int x = 0; x<3; x++) {
@@ -95,22 +88,40 @@ int gamesPlayed = 0;
 
 
 -(void)handleButton:(UIButton *)button{
-    NSString *selectionNumber = [[button.subviews lastObject] text];
-    [self.game checkAnswer:selectionButton];
-    [self.game buttonPress:[self.game isWinner]];
-    [self.game winGame];
+    selectionNumber = [[button.subviews lastObject] text];
+    NSLog(@"selection button on top %@", selectionNumber);
     
-    NSLog(@"in the button %@",selectionNumber);
+    //[button setHidden:YES];
+    [self checkAnswer];
     [button setHidden:YES];
     
-    if ([self.game isWinner] == TRUE) {
-        [self resetButton];
-    }
+    self.game.gameGuess++;
     
+    if (self.game.gameGuess >=4) {
+        [self.game tooManyGuesses];
+        NSLog(@"too many guesses");
+        
+    } else if (self.game.isWinner == TRUE){
+        [self.game winGame];
+        NSLog(@"you win! in button press");
+        [button setHidden:NO];
+    } else {
+        NSLog(@"you lost in button press");
+    }
 }
 
--(void)resetButton{
-    [self.button setHidden:NO];
+
+-(void)checkAnswer{
+    if (selectionNumber ==  self.game.answer) {
+        NSLog(@"winner in CA selectionNumber = %@", selectionNumber);
+        NSLog(@"answer = %@", self.game.answer);
+        self.game.isWinner = TRUE;
+    } else {
+        NSLog(@"loser in CA selectionNumber = %@", selectionNumber);
+        NSLog(@"answer = %@", self.game.answer);
+
+        
+    }
 }
 
 

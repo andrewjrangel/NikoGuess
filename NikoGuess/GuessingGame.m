@@ -15,7 +15,8 @@
 
 @synthesize answer;
 @synthesize answers;
-NSInteger gameGuess = 0;
+NSInteger gameGuess;
+NSString *selectionNumber;
 
 
 
@@ -33,7 +34,6 @@ NSInteger gameGuess = 0;
 }
 
 -(void)runGame{
-    gameGuess ++;
     [self resetAnswer];
     
 }
@@ -59,29 +59,34 @@ NSInteger gameGuess = 0;
 
 
 
--(void)checkAnswer: (NSString *) selectionButton{
-    if (selectionButton == answer) {
-        NSLog(@"you win!");
-        self.isWinner = TRUE;
-    } else {
-        NSLog(@"you lose!");
-        
-    }
-}
-
--(void)buttonPress:(BOOL)isWinner{
-    gameGuess++;
-    
-    if (gameGuess >=4) {
-        NSLog(@"too many guesses");
-    } else if (self.isWinner == TRUE){
-        [self winGame];
-        NSLog(@"you win!");
-    } else {
-        NSLog(@"you lost");
-    }
-    
-}
+//-(void)checkAnswer: (NSString *) selectionNumber{
+//    if (selectionNumber == answer) {
+//        NSLog(@"you win! in check answer");
+//        NSLog(@"winner in CA selectionNumber =%@", selectionNumber);
+//        self.isWinner = TRUE;
+//    } else {
+//        NSLog(@"you lose in check answer");
+//        NSLog(@"loser in CA selectionNumber =%@", selectionNumber);
+//
+//        
+//    }
+//}
+//
+//-(void)buttonPress{
+//    [self checkAnswer:selectionNumber];
+//    gameGuess++;
+//    
+//    if (gameGuess >=4) {
+//        [self tooManyGuesses];
+//        NSLog(@"too many guesses");
+//    } else if (self.isWinner == TRUE){
+//        [self winGame];
+//        NSLog(@"you win! in button press");
+//    } else {
+//        NSLog(@"you lost in button press");
+//    }
+//    
+//}
 
 
 

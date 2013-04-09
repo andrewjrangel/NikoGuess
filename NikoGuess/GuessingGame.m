@@ -8,6 +8,7 @@
 
 #import "GuessingGame.h"
 #import "MainViewController.h"
+#import "WinViewController.h"
 
 
 
@@ -16,6 +17,7 @@
 @synthesize answer;
 @synthesize answers;
 NSInteger gameGuess;
+NSInteger gamesWon;
 NSString *selectionNumber;
 NSString *theAnswer;
 
@@ -35,7 +37,9 @@ NSString *theAnswer;
 }
 
 -(void)runGame{
-    [self resetAnswer];
+    gameGuess = 0;
+    gamesWon = 0;
+    self.showWinView = FALSE;
     
 }
 
@@ -50,7 +54,14 @@ NSString *theAnswer;
 }
 
 -(void)winGame{
+    gamesWon++;
     NSLog(@"winGame");
+    NSLog(@"gamesWon = %d", gamesWon);
+    [[NSUserDefaults standardUserDefaults] setInteger:gamesWon forKey:@"gamesWon"];
+    if (gamesWon >=3) {
+        self.showWinView = TRUE;
+    }
+    
 }
 
 -(void)keepTrying{

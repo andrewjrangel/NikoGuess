@@ -22,7 +22,18 @@
 NSString *selectionNumber;
 
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    if(resetGame == TRUE){
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"overage"];
+        NSLog(@"game reset complete");
+       // count = 0;
+       // gamesPlayed = 0;
+        self.game.gamesWon = 0;
+        resetGame = FALSE;
+        
+    }
+}
 
 
 
@@ -30,6 +41,8 @@ NSString *selectionNumber;
 {
     self.game = [[GuessingGame alloc]init];
     [self.game runGame];
+    [self.game resetAnswer];
+
 
     
   
@@ -87,6 +100,7 @@ NSString *selectionNumber;
 }
 
 - (void)resetToNewGame {
+    self.game.gameGuess = 0;
     NSArray *views = [self.view subviews];
     for (UIView *view in views) {
         
@@ -98,32 +112,35 @@ NSString *selectionNumber;
         }
     }
 
-self.game.gameGuess = 0;
 
 }
 
 -(void)handleButton:(UIButton *)button{
+    self.game.gameGuess++;
     selectionNumber = [[button.subviews lastObject] text];
     NSLog(@"selection button on top %@", selectionNumber);
-    
-
-    
     [self.game checkAnswer:selectionNumber forAnswer:self.game.answer];
-    
     [button setHidden:YES];
   
-    
-    self.game.gameGuess++;
-    
     if (self.game.gameGuess >=4) {
         [self resetToNewGame];
         UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
         [overageAlert show];
         NSLog(@"too many guesses");
-        
+        [self.game resetAnswer];
+
     } else if (self.game.isWinner == TRUE){
         [self.game winGame];
+
+        if (self.game.showWinView == TRUE){
+            WinViewController *winView = [[WinViewController alloc] init];
+            winView.myParent = self;
+            [self presentViewController:winView animated:YES completion:nil];
+        }
+        [self.game resetAnswer];
         [self resetToNewGame];
+
+
         NSLog(@"you win! in button press");
     } else {
         NSLog(@"you lost in button press");

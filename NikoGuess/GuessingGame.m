@@ -17,6 +17,7 @@
 @synthesize answers;
 NSInteger gameGuess;
 NSString *selectionNumber;
+NSString *theAnswer;
 
 
 
@@ -56,66 +57,20 @@ NSString *selectionNumber;
     NSLog(@"Keep Trying");
 }
 
+- (void)checkAnswer:(NSString *)selectionNumber forAnswer:(NSString *)answer {
+    theAnswer = self.answer;
+    if ([selectionNumber isEqualToString:theAnswer]) {
+        NSLog(@"winner in CA selectionNumber = %@", selectionNumber);
+        NSLog(@"answer = %@", theAnswer);
+        self.isWinner = YES;
+    } else {
+        NSLog(@"loser in CA selectionNumber = %@", selectionNumber);
+        NSLog(@"answer = %@", theAnswer);
+        self.isWinner = NO;
+    }
+    
+}
 
-
-
-//-(void)checkAnswer: (NSString *) selectionNumber{
-//    if (selectionNumber == answer) {
-//        NSLog(@"you win! in check answer");
-//        NSLog(@"winner in CA selectionNumber =%@", selectionNumber);
-//        self.isWinner = TRUE;
-//    } else {
-//        NSLog(@"you lose in check answer");
-//        NSLog(@"loser in CA selectionNumber =%@", selectionNumber);
-//
-//        
-//    }
-//}
-//
-//-(void)buttonPress{
-//    [self checkAnswer:selectionNumber];
-//    gameGuess++;
-//    
-//    if (gameGuess >=4) {
-//        [self tooManyGuesses];
-//        NSLog(@"too many guesses");
-//    } else if (self.isWinner == TRUE){
-//        [self winGame];
-//        NSLog(@"you win! in button press");
-//    } else {
-//        NSLog(@"you lost in button press");
-//    }
-//    
-//}
-
-
-
-
-
-
-//if(resetGame == TRUE){
-//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
-//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"overage"];
-//    NSLog(@"game reset complete");
-//    count = 0;
-//    gamesPlayed = 0;
-//    gamesWon = 0;
-//    [self setWinsHidden];
-//    resetGame = FALSE;
-//    
-//}
-
-
-
-//-(void)gameWin{
-//    gamesWon++;
-//    [[NSUserDefaults standardUserDefaults] setInteger:gamesWon forKey:@"gamesWon"];
-//    if (gamesWon == 3){
-//        WinViewController *winView = [[WinViewController alloc] init];
-//        winView.myParent = self;
-//        [self presentViewController:winView animated:YES completion:nil];
-//    }
-//}
 
 
 

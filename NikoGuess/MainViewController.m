@@ -40,6 +40,7 @@ NSString *selectionNumber;
         for (int x = 0; x<3; x++) {
             UIButton *button = [[UIButton alloc]init];
             button.frame = CGRectMake(x*100+15, y*70+150, 75, 64);
+            button.tag = 987;
             [button setBackgroundImage:[UIImage imageNamed:@"cat-head-outline-th"] forState:UIControlStateNormal];
             [self.view addSubview:button];
             [button addTarget:self action:@selector(handleButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -85,44 +86,51 @@ NSString *selectionNumber;
 
 }
 
+- (void)resetToNewGame {
+    NSArray *views = [self.view subviews];
+    for (UIView *view in views) {
+        
+        if ([view isKindOfClass:[UIButton class]]) {
 
+            if (view.tag == 987) {
+                [view setHidden:NO];                
+            }
+        }
+    }
+
+self.game.gameGuess = 0;
+
+}
 
 -(void)handleButton:(UIButton *)button{
     selectionNumber = [[button.subviews lastObject] text];
     NSLog(@"selection button on top %@", selectionNumber);
     
-    //[button setHidden:YES];
-    [self checkAnswer];
+
+    
+    [self.game checkAnswer:selectionNumber forAnswer:self.game.answer];
+    
     [button setHidden:YES];
+  
     
     self.game.gameGuess++;
     
     if (self.game.gameGuess >=4) {
-        [self.game tooManyGuesses];
+        [self resetToNewGame];
+        UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
+        [overageAlert show];
         NSLog(@"too many guesses");
         
     } else if (self.game.isWinner == TRUE){
         [self.game winGame];
+        [self resetToNewGame];
         NSLog(@"you win! in button press");
-        [button setHidden:NO];
     } else {
         NSLog(@"you lost in button press");
     }
 }
 
 
--(void)checkAnswer{
-    if (selectionNumber ==  self.game.answer) {
-        NSLog(@"winner in CA selectionNumber = %@", selectionNumber);
-        NSLog(@"answer = %@", self.game.answer);
-        self.game.isWinner = TRUE;
-    } else {
-        NSLog(@"loser in CA selectionNumber = %@", selectionNumber);
-        NSLog(@"answer = %@", self.game.answer);
-
-        
-    }
-}
 
 
 -(void)dismissWinningView{

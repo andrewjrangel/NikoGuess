@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NikoGuess/GuessingGame.m"
-         timestampString = "386995287.052728"
+         timestampString = "387175533.372766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
          landmarkName = "-getAnswerArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,12 +21,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NikoGuess/MainViewController.m"
-         timestampString = "387040907.488089"
+         timestampString = "387163555.726841"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "NikoGuess/MainViewController.m"
+         timestampString = "387176489.521204"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
+         landmarkName = "-handleButton:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

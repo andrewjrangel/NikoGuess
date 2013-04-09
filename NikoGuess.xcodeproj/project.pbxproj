@@ -10,18 +10,15 @@
 		881CAD5E17069C490092CDD5 /* nekobean_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD5B17069C490092CDD5 /* nekobean_smile.png */; };
 		881CAD621706A6090092CDD5 /* NikoGuess.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD611706A6090092CDD5 /* NikoGuess.png */; };
 		881CAD641706ABDD0092CDD5 /* defaultNiko.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD631706ABDD0092CDD5 /* defaultNiko.png */; };
-		881CAD661706ABE80092CDD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD651706ABE80092CDD5 /* Default.png */; };
 		881CAD6B170747630092CDD5 /* NGicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD69170747620092CDD5 /* NGicon.png */; };
 		881CAD6C170747630092CDD5 /* NGicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD6A170747630092CDD5 /* NGicon@2x.png */; };
-		881CAD6E170747750092CDD5 /* NGicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD6D170747750092CDD5 /* NGicon.png */; };
-		881CAD70170747790092CDD5 /* NGicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD6F170747790092CDD5 /* NGicon@2x.png */; };
-		881CAD731707566F0092CDD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD711707566F0092CDD5 /* Default.png */; };
-		881CAD741707566F0092CDD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD721707566F0092CDD5 /* Default@2x.png */; };
 		881CAD76170953820092CDD5 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD75170953820092CDD5 /* success.png */; };
 		881CAD78170969AF0092CDD5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881CAD77170969AF0092CDD5 /* AVFoundation.framework */; };
 		881CAD7A17096B240092CDD5 /* Cat02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 881CAD7917096B240092CDD5 /* Cat02.mp3 */; };
 		881CADB1170B9FAC0092CDD5 /* GuessingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 881CADB0170B9FAC0092CDD5 /* GuessingGame.m */; };
 		881CADB4170B9FC00092CDD5 /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = 881CADB3170B9FC00092CDD5 /* Choice.m */; };
+		88ADF01C1713D78000E3B3A6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88ADF01A1713D78000E3B3A6 /* Default.png */; };
+		88ADF01D1713D78000E3B3A6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88ADF01B1713D78000E3B3A6 /* Default@2x.png */; };
 		88FF26A31703AF6D00FDB505 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A21703AF6D00FDB505 /* UIKit.framework */; };
 		88FF26A51703AF6D00FDB505 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A41703AF6D00FDB505 /* Foundation.framework */; };
 		88FF26A71703AF6D00FDB505 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FF26A61703AF6D00FDB505 /* CoreGraphics.framework */; };
@@ -31,8 +28,6 @@
 		88FF26C21703AF8B00FDB505 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FF26C01703AF8B00FDB505 /* MainViewController.m */; };
 		88FF26C31703AF8B00FDB505 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26C11703AF8B00FDB505 /* MainViewController.xib */; };
 		88FF26F31703B42C00FDB505 /* cat-head-outline-th.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */; };
-		88FF26FA1704128300FDB505 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F81704128300FDB505 /* Default.png */; };
-		88FF26FB1704128300FDB505 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF26F91704128300FDB505 /* Default@2x.png */; };
 		88FF27071704135600FDB505 /* WinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FF27051704135500FDB505 /* WinViewController.m */; };
 		88FF27081704135600FDB505 /* WinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FF27061704135500FDB505 /* WinViewController.xib */; };
 		88FF270A17062EFD00FDB505 /* r04.ai_shop_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FF270917062EFC00FDB505 /* r04.ai_shop_preview.png */; };
@@ -42,13 +37,8 @@
 		881CAD5B17069C490092CDD5 /* nekobean_smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nekobean_smile.png; sourceTree = "<group>"; };
 		881CAD611706A6090092CDD5 /* NikoGuess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NikoGuess.png; sourceTree = "<group>"; };
 		881CAD631706ABDD0092CDD5 /* defaultNiko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultNiko.png; sourceTree = "<group>"; };
-		881CAD651706ABE80092CDD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		881CAD69170747620092CDD5 /* NGicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NGicon.png; sourceTree = "<group>"; };
 		881CAD6A170747630092CDD5 /* NGicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NGicon@2x.png"; sourceTree = "<group>"; };
-		881CAD6D170747750092CDD5 /* NGicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NGicon.png; sourceTree = "<group>"; };
-		881CAD6F170747790092CDD5 /* NGicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NGicon@2x.png"; sourceTree = "<group>"; };
-		881CAD711707566F0092CDD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		881CAD721707566F0092CDD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		881CAD75170953820092CDD5 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
 		881CAD77170969AF0092CDD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		881CAD7917096B240092CDD5 /* Cat02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cat02.mp3; sourceTree = "<group>"; };
@@ -56,6 +46,8 @@
 		881CADB0170B9FAC0092CDD5 /* GuessingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuessingGame.m; sourceTree = "<group>"; };
 		881CADB2170B9FC00092CDD5 /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
 		881CADB3170B9FC00092CDD5 /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
+		88ADF01A1713D78000E3B3A6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		88ADF01B1713D78000E3B3A6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		88FF269F1703AF6D00FDB505 /* NikoGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FF26A21703AF6D00FDB505 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88FF26A41703AF6D00FDB505 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,8 +62,6 @@
 		88FF26C01703AF8B00FDB505 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		88FF26C11703AF8B00FDB505 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		88FF26F21703B42C00FDB505 /* cat-head-outline-th.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat-head-outline-th.png"; sourceTree = "<group>"; };
-		88FF26F81704128300FDB505 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		88FF26F91704128300FDB505 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		88FF27041704135400FDB505 /* WinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinViewController.h; sourceTree = "<group>"; };
 		88FF27051704135500FDB505 /* WinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinViewController.m; sourceTree = "<group>"; };
 		88FF27061704135500FDB505 /* WinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinViewController.xib; sourceTree = "<group>"; };
@@ -108,9 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				881CAD77170969AF0092CDD5 /* AVFoundation.framework */,
-				881CAD6F170747790092CDD5 /* NGicon@2x.png */,
-				881CAD6D170747750092CDD5 /* NGicon.png */,
-				881CAD651706ABE80092CDD5 /* Default.png */,
 				88FF26A81703AF6D00FDB505 /* NikoGuess */,
 				88FF26A11703AF6D00FDB505 /* Frameworks */,
 				88FF26A01703AF6D00FDB505 /* Products */,
@@ -156,10 +143,8 @@
 		88FF26A91703AF6D00FDB505 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				881CAD711707566F0092CDD5 /* Default.png */,
-				881CAD721707566F0092CDD5 /* Default@2x.png */,
-				88FF26F81704128300FDB505 /* Default.png */,
-				88FF26F91704128300FDB505 /* Default@2x.png */,
+				88ADF01A1713D78000E3B3A6 /* Default.png */,
+				88ADF01B1713D78000E3B3A6 /* Default@2x.png */,
 				88FF26AA1703AF6D00FDB505 /* NikoGuess-Info.plist */,
 				88FF26AB1703AF6D00FDB505 /* InfoPlist.strings */,
 				88FF26AE1703AF6D00FDB505 /* main.m */,
@@ -238,22 +223,17 @@
 				88FF26AD1703AF6D00FDB505 /* InfoPlist.strings in Resources */,
 				88FF26C31703AF8B00FDB505 /* MainViewController.xib in Resources */,
 				88FF26F31703B42C00FDB505 /* cat-head-outline-th.png in Resources */,
-				88FF26FA1704128300FDB505 /* Default.png in Resources */,
-				88FF26FB1704128300FDB505 /* Default@2x.png in Resources */,
 				88FF27081704135600FDB505 /* WinViewController.xib in Resources */,
 				88FF270A17062EFD00FDB505 /* r04.ai_shop_preview.png in Resources */,
 				881CAD5E17069C490092CDD5 /* nekobean_smile.png in Resources */,
 				881CAD621706A6090092CDD5 /* NikoGuess.png in Resources */,
 				881CAD641706ABDD0092CDD5 /* defaultNiko.png in Resources */,
-				881CAD661706ABE80092CDD5 /* Default.png in Resources */,
 				881CAD6B170747630092CDD5 /* NGicon.png in Resources */,
 				881CAD6C170747630092CDD5 /* NGicon@2x.png in Resources */,
-				881CAD6E170747750092CDD5 /* NGicon.png in Resources */,
-				881CAD70170747790092CDD5 /* NGicon@2x.png in Resources */,
-				881CAD731707566F0092CDD5 /* Default.png in Resources */,
-				881CAD741707566F0092CDD5 /* Default@2x.png in Resources */,
 				881CAD76170953820092CDD5 /* success.png in Resources */,
 				881CAD7A17096B240092CDD5 /* Cat02.mp3 in Resources */,
+				88ADF01C1713D78000E3B3A6 /* Default.png in Resources */,
+				88ADF01D1713D78000E3B3A6 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

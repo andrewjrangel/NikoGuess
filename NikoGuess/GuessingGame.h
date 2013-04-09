@@ -11,7 +11,6 @@
 @interface GuessingGame : NSObject
 
 @property BOOL isWinner;
-@property BOOL isLoser;
 @property (nonatomic) NSInteger gameGuess;
 @property (nonatomic) NSInteger maxGuess;
 @property (nonatomic) NSInteger gameWin;
@@ -20,10 +19,12 @@
 @property (strong, nonatomic) NSString *answer;
 
 
--(void)checkAnswer: (NSString *) selectionNumber;
 -(void)buttonPress;
 -(void)runGame;
 -(void)tooManyGuesses;
 -(void)winGame;
 -(void)keepTrying;
+- (void)checkAnswer:(NSString *)selectionNumber forAnswer:(NSString *)answer;
+
+
 @end

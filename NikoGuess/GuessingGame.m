@@ -60,6 +60,11 @@ NSString *theAnswer;
     [[NSUserDefaults standardUserDefaults] setInteger:gamesWon forKey:@"gamesWon"];
     if (gamesWon >=3) {
         self.showWinView = TRUE;
+        self.win3 = TRUE;
+    } else if (gamesWon == 2) {
+        self.win2 = TRUE;
+    } else if (gamesWon == 1) {
+        self.win1 = TRUE;
     }
     
 }

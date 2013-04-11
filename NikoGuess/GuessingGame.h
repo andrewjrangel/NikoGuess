@@ -12,6 +12,10 @@
 
 @property BOOL isWinner;
 @property BOOL showWinView;
+@property BOOL win1;
+@property BOOL win2;
+@property BOOL win3;
+
 @property (nonatomic) NSInteger gameGuess;
 @property (nonatomic) NSInteger maxGuess;
 @property (nonatomic) NSInteger gamesWon;

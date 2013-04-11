@@ -20,6 +20,7 @@
 
 
 NSString *selectionNumber;
+NSInteger gameLossCount;
 
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -30,6 +31,7 @@ NSString *selectionNumber;
        // count = 0;
        // gamesPlayed = 0;
         self.game.gamesWon = 0;
+        [self hideWinButtons];
         resetGame = FALSE;
         
     }
@@ -42,6 +44,10 @@ NSString *selectionNumber;
     self.game = [[GuessingGame alloc]init];
     [self.game runGame];
     [self.game resetAnswer];
+    gameLossCount = 0;
+    [self hideWinButtons];
+    
+
 
 
     
@@ -76,43 +82,70 @@ NSString *selectionNumber;
             [button addSubview:title];
         }
         
-        for (int yy = 0; yy<1; yy++) {
-            for (int xx = 0; xx<3; xx++) {
-                UIButton *winButton = [[UIButton alloc] init];
-                winButton.frame = CGRectMake(xx*75+15, yy*10+375, 75.2, 61);
-                [winButton setBackgroundImage:[UIImage imageNamed:@"nekobean_smile.png"] forState:UIControlStateNormal];
-                [self.view addSubview:winButton];
-                UILabel *winButtonHide = [[UILabel alloc] initWithFrame:CGRectMake(25, 25, 25, 25)];
-                winButtonHide.text = [NSString stringWithFormat:@"%d", yy*3+xx+1];
-                winButtonHide.backgroundColor = [UIColor clearColor];
-                winButtonHide.textColor = [UIColor clearColor];
-                [winButton addSubview:winButtonHide];
-            
-            }
-        }
+//        for (int yy = 0; yy<1; yy++) {
+//            for (int xx = 0; xx<3; xx++) {
+//                UIButton *winButton = [[UIButton alloc] init];
+//                winButton.tag = xx;
+//                winButton.frame = CGRectMake(xx*75+15, yy*10+375, 75.2, 61);
+//                [winButton setBackgroundImage:[UIImage imageNamed:@"nekobean_smile.png"] forState:UIControlStateNormal];
+//                [self.view addSubview:winButton];
+//                UILabel *winButtonHide = [[UILabel alloc] initWithFrame:CGRectMake(25, 25, 25, 25)];
+//                winButtonHide.text = [NSString stringWithFormat:@"%d", yy*3+xx+1];
+//                winButtonHide.backgroundColor = [UIColor clearColor];
+//                winButtonHide.textColor = [UIColor clearColor];
+//                [winButton addSubview:winButtonHide];
+//            
+//            }
+//        }
     }
-    
-    
-   
-    
-    
-
 }
+
+//UIView *win1Button = [self.view viewWithTag:0];
+-(void)hideWinButtons{
+    [self.win1 setHidden:YES];
+    [self.win2 setHidden:YES];
+    [self.win3 setHidden:YES];
+}
+
+-(void)displayWinButtons{
+    if (self.game.win3 == TRUE){
+        [self.win1 setHidden:NO];
+        [self.win2 setHidden:NO];
+        [self.win3 setHidden:NO];
+    } else if (self.game.win2 == TRUE){
+        [self.win1 setHidden:NO];
+        [self.win2 setHidden:NO];
+    } else if (self.game.win1 == TRUE){
+        [self.win1 setHidden:NO];
+    }
+}
+
 
 - (void)resetToNewGame {
     self.game.gameGuess = 0;
+    self.game.gamesWon = 0;
     NSArray *views = [self.view subviews];
     for (UIView *view in views) {
         
         if ([view isKindOfClass:[UIButton class]]) {
 
             if (view.tag == 987) {
-                [view setHidden:NO];                
+                [view setHidden:NO];
+               
             }
         }
     }
+}
 
-
+- (void)clearAllButtons {
+    NSArray *views = [self.view subviews];
+    for (UIView *view in views) {
+        
+        if ([view isKindOfClass:[UIButton class]]) {
+            [view setHidden:YES];
+            
+        }
+    }
 }
 
 -(void)handleButton:(UIButton *)button{
@@ -122,11 +155,23 @@ NSString *selectionNumber;
     [self.game checkAnswer:selectionNumber forAnswer:self.game.answer];
     [button setHidden:YES];
   
-    if (self.game.gameGuess >=4) {
+    if (gameLossCount >=4) {
+        [self clearAllButtons];
+        
+        UIAlertView *gameLossAlert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:@"You can no longer play this game until you buy the premium version" delegate:nil cancelButtonTitle:@"Purchase" otherButtonTitles:@"Cancel", nil];
+        
+        [gameLossAlert show];
+        
+        NSLog(@"too many guesses");
+        
+    } else if (self.game.gameGuess >=4) {
+        gameLossCount++;
         [self resetToNewGame];
+        
         UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
         [overageAlert show];
         NSLog(@"too many guesses");
+        
         [self.game resetAnswer];
 
     } else if (self.game.isWinner == TRUE){
@@ -137,6 +182,7 @@ NSString *selectionNumber;
             winView.myParent = self;
             [self presentViewController:winView animated:YES completion:nil];
         }
+        [self displayWinButtons];
         [self.game resetAnswer];
         [self resetToNewGame];
 
@@ -146,6 +192,7 @@ NSString *selectionNumber;
         NSLog(@"you lost in button press");
     }
 }
+
 
 
 

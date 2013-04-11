@@ -81,22 +81,6 @@ NSInteger gameLossCount;
             }
             [button addSubview:title];
         }
-        
-//        for (int yy = 0; yy<1; yy++) {
-//            for (int xx = 0; xx<3; xx++) {
-//                UIButton *winButton = [[UIButton alloc] init];
-//                winButton.tag = xx;
-//                winButton.frame = CGRectMake(xx*75+15, yy*10+375, 75.2, 61);
-//                [winButton setBackgroundImage:[UIImage imageNamed:@"nekobean_smile.png"] forState:UIControlStateNormal];
-//                [self.view addSubview:winButton];
-//                UILabel *winButtonHide = [[UILabel alloc] initWithFrame:CGRectMake(25, 25, 25, 25)];
-//                winButtonHide.text = [NSString stringWithFormat:@"%d", yy*3+xx+1];
-//                winButtonHide.backgroundColor = [UIColor clearColor];
-//                winButtonHide.textColor = [UIColor clearColor];
-//                [winButton addSubview:winButtonHide];
-//            
-//            }
-//        }
     }
 }
 

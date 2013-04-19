@@ -16,10 +16,9 @@
 @property BOOL win2;
 @property BOOL win3;
 
+
 @property (nonatomic) NSInteger gameGuess;
-@property (nonatomic) NSInteger maxGuess;
 @property (nonatomic) NSInteger gamesWon;
-@property (nonatomic) NSInteger maxWin;
 @property (strong, nonatomic) NSArray *answers;
 @property (strong, nonatomic) NSString *answer;
 
@@ -28,7 +27,6 @@
 -(void)runGame;
 -(void)tooManyGuesses;
 -(void)winGame;
--(void)keepTrying;
 -(void)resetAnswer;
 - (void)checkAnswer:(NSString *)selectionNumber forAnswer:(NSString *)answer;
 

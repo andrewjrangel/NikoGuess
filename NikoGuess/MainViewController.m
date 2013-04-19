@@ -24,20 +24,21 @@ NSInteger gameLossCount;
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    if(resetGame == TRUE){
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"overage"];
-        NSLog(@"game reset complete");
-       // count = 0;
-       // gamesPlayed = 0;
-        self.game.gamesWon = 0;
-        [self hideWinButtons];
-        resetGame = FALSE;
-        
-    }
+    [self reset];
+    self.game.showWinView = FALSE;
 }
 
-
+- (void)reset {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hide"];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"overage"];
+    [self hideWinButtons];
+    //self.game.winsReset = TRUE;
+    self.game.win1 = FALSE;
+    self.game.win2 = FALSE;
+    self.game.win3 = FALSE;
+    
+    
+}
 
 - (void)viewDidLoad
 {
@@ -84,7 +85,8 @@ NSInteger gameLossCount;
     }
 }
 
-//UIView *win1Button = [self.view viewWithTag:0];
+
+
 -(void)hideWinButtons{
     [self.win1 setHidden:YES];
     [self.win2 setHidden:YES];
@@ -107,7 +109,7 @@ NSInteger gameLossCount;
 
 - (void)resetToNewGame {
     self.game.gameGuess = 0;
-    self.game.gamesWon = 0;
+    //self.game.gamesWon = 0;
     NSArray *views = [self.view subviews];
     for (UIView *view in views) {
         
@@ -145,17 +147,13 @@ NSInteger gameLossCount;
         UIAlertView *gameLossAlert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:@"You can no longer play this game until you buy the premium version" delegate:nil cancelButtonTitle:@"Purchase" otherButtonTitles:@"Cancel", nil];
         
         [gameLossAlert show];
-        
-        NSLog(@"too many guesses");
-        
+            
     } else if (self.game.gameGuess >=4) {
         gameLossCount++;
         [self resetToNewGame];
         
         UIAlertView *overageAlert = [[UIAlertView alloc] initWithTitle:@"No More" message:@"You only have four guesses to get this cats number right!" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles:nil, nil];
-        [overageAlert show];
-        NSLog(@"too many guesses");
-        
+        [overageAlert show];        
         [self.game resetAnswer];
 
     } else if (self.game.isWinner == TRUE){
@@ -169,12 +167,7 @@ NSInteger gameLossCount;
         [self displayWinButtons];
         [self.game resetAnswer];
         [self resetToNewGame];
-
-
-        NSLog(@"you win! in button press");
-    } else {
-        NSLog(@"you lost in button press");
-    }
+    } 
 }
 
 

@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NikoGuess/MainViewController.m"
-         timestampString = "387413534.821624"
+         timestampString = "387434446.208484"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-displayWinButtons"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NikoGuess/MainViewController.m"
-         timestampString = "387413401.670594"
+         timestampString = "387435865.087183"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "169"
-         endingLineNumber = "169"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-handleButton:"
          landmarkType = "5">
       </FileBreakpoint>

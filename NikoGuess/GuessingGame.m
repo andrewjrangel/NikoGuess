@@ -54,11 +54,15 @@ NSString *theAnswer;
 }
 
 -(void)winGame{
+
     gamesWon++;
-    NSLog(@"winGame");
-    NSLog(@"gamesWon = %d", gamesWon);
     [[NSUserDefaults standardUserDefaults] setInteger:gamesWon forKey:@"gamesWon"];
-    if (gamesWon >=3) {
+    
+    if (gamesWon>3) {
+        gamesWon = 1;
+    }
+    
+    if (gamesWon == 3) {
         self.showWinView = TRUE;
         self.win3 = TRUE;
     } else if (gamesWon == 2) {
@@ -69,19 +73,13 @@ NSString *theAnswer;
     
 }
 
--(void)keepTrying{
-    NSLog(@"Keep Trying");
-}
+
 
 - (void)checkAnswer:(NSString *)selectionNumber forAnswer:(NSString *)answer {
     theAnswer = self.answer;
     if ([selectionNumber isEqualToString:theAnswer]) {
-        NSLog(@"winner in CA selectionNumber = %@", selectionNumber);
-        NSLog(@"answer = %@", theAnswer);
         self.isWinner = YES;
     } else {
-        NSLog(@"loser in CA selectionNumber = %@", selectionNumber);
-        NSLog(@"answer = %@", theAnswer);
         self.isWinner = NO;
     }
     
